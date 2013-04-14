@@ -1,0 +1,17 @@
+{
+   "manifest_version": 2,
+    "background": {
+        "scripts": ["background.js"]
+    },
+   "content_scripts": [ {
+      "js": [ "jquery-1.6.2.min.js", "mapswitcher.js" ],
+      "matches": [ "*://*.kraland.org/*" ]
+   } ],
+   "description": "Pour le développement des nouvelles maps.",
+   "name": "Map Switcher AG",
+   "permissions": [ 
+        "http://*/*", 
+        "https://*/*", 
+        "background" ],
+   "version": "1.0"
+}
