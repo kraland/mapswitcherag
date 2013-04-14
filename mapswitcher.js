@@ -2,6 +2,9 @@ chrome.extension.sendMessage({
     type: "getStorage",
     item: "urlmap"
 }, function(urlmap) {
+    if (!urlmap) {
+        urlmap = "http://www.kramages.org/2/map/1/";
+    }
     jQuery('#map-content').find('div').each(function(){
         MapTheme(jQuery(this), urlmap);
     });
