@@ -1,0 +1,25 @@
+<html>
+<head><title>Map KI Options</title></head>
+<script type="text/javascript">
+// Saves options to localStorage.
+function save_options() {
+  var urlmap = document.getElementById("urlmap").value;
+  localStorage.setItem("urlmap", urlmap);
+}
+// Restores select box state to saved value from localStorage.
+function restore_options() {
+  var urlmap = localStorage.getItem("urlmap");
+  
+  if (!urlmap){
+      urlmap = "http://www.kramages.org/2/map/1/";
+  }
+  document.getElementById("urlmap").value = urlmap;
+}
+</script>
+<body onload="restore_options()">
+URL map :
+<input type="text" value="" id="urlmap"/>
+<br>
+<button onclick="save_options()">Save</button>
+</body>
+</html>
